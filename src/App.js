@@ -18,6 +18,7 @@ class App extends Component {
       dappSpace: [],
       inputKey: '',
       inputValue:'',
+      displayValueKey: '',
       displayValue: ''
     }
   }
@@ -77,24 +78,29 @@ class App extends Component {
     await this.setState({ inputKey: '', inputValue: '' });
   }
 
-    // change the key field for input
-    handleKeyChange = (key) => {
-      this.setState({inputKey: key});
-    } 
-  
-    // change value field for input
-    handleValueChange = (value) => {
-      this.setState({inputValue: value});
-    } 
+  // change the key field for input
+  handleKeyChange = (key) => {
+    this.setState({inputKey: key});
+  } 
+
+  // change value field for input
+  handleValueChange = (value) => {
+    this.setState({inputValue: value});
+  }
+
+  //change value for key used to get displayValue in getSecret
+  handleGetSecretKey = (key) => {
+    this.setState({displayValueKey: key})
+  }
 
   // **Getting info from Space (Storage)**
   getSecret = async () => {
-    const { inputKey, dappSpace } = this.state;
+    const { displayValueKey, dappSpace } = this.state;
     
     //returns string || object.. undefined if no such key
-    const displayValue = await dappSpace.private.get(inputKey)
+    const displayValue = await dappSpace.private.get(displayValueKey)
 
-    await this.setState({ displayValue, inputKey: '' });
+    await this.setState({ displayValue, displayValueKey: '' });
   }
 
   render() {
@@ -129,6 +135,7 @@ class App extends Component {
                   handleKeyChange={this.handleKeyChange}
                   handleValueChange={this.handleValueChange}
                   getSecret={this.getSecret}
+                  handleGetSecretKey={this.handleGetSecretKey}
                  />
               )}
             />

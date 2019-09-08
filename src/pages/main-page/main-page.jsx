@@ -7,7 +7,7 @@ import ProfileHover from 'profile-hover';
 
 import './main-page.styles.scss';
 
-const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handleKeyChange, getSecret, displayValue }) => (
+const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handleKeyChange, handleGetSecretKey, getSecret, displayValue }) => (
   <Fragment>
     <Header
         handleLogout={handleLogout}
@@ -31,6 +31,7 @@ const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handl
         <GetSecret
           getSecret={getSecret}
           handleKeyChange={handleKeyChange}
+          handleGetSecretKey={handleGetSecretKey}
           displayValue={displayValue}
         />
       </div>

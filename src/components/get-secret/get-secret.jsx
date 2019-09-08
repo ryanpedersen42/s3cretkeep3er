@@ -14,8 +14,8 @@ class GetSecret extends Component {
   }
 
   handleChange = (e) => {
-    const { handleKeyChange } = this.props;
-    handleKeyChange(e.target.value);
+    const { handleGetSecretKey } = this.props;
+    handleGetSecretKey(e.target.value);
   }
 
   toggleThisComponent = () => {
