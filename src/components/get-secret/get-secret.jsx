@@ -23,7 +23,6 @@ class GetSecret extends Component {
     this.setState({ hidden: !hidden })
   }
 
-
   render() {
     const { displayValue, getSecret } = this.props;
     const { hidden } = this.state;

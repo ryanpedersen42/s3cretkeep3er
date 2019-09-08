@@ -32,7 +32,7 @@ class App extends Component {
     this.setState({ isAppReady: true });
   }
 
-  // **Authentication Actions **
+  // **Authentication Actions**
   handleAuth = async () => {
     const { history } = this.props
 
