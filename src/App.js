@@ -19,7 +19,8 @@ class App extends Component {
       inputKey: '',
       inputValue:'',
       displayValueKey: '',
-      displayValue: ''
+      displayValue: '',
+      userProfile: {},
     }
   }
 
@@ -52,7 +53,17 @@ class App extends Component {
     // set all to state and continue
     await this.setState({ box, ethAddress, dappSpace });
 
+    await this.getUserProfile();
+
     history.push('/main');
+  }
+
+  getUserProfile = async () => {
+    const { ethAddress } = this.state;
+    const userProfile = await Box.getProfile(ethAddress);
+
+    await this.setState({ userProfile })
+    await console.log(this.state.userProfile)
   }
 
   handleLogout = async () => {
@@ -106,7 +117,7 @@ class App extends Component {
   }
 
   render() {
-    const { isAppReady, ethAddress, inputKey, inputValue, displayValue } = this.state;
+    const { isAppReady, ethAddress, inputKey, inputValue, displayValue, userProfile } = this.state;
     return (
       <div className='App'>
         {isAppReady && (<Fragment>
@@ -130,6 +141,7 @@ class App extends Component {
                   inputKey={inputKey}
                   inputValue={inputValue}
                   displayValue={displayValue} 
+                  profileStatus={userProfile.status}
 
                   //functions
                   handleLogout={this.handleLogout}

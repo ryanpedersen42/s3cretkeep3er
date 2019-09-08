@@ -7,7 +7,7 @@ import ProfileHover from 'profile-hover';
 
 import './main-page.styles.scss';
 
-const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handleKeyChange, handleGetSecretKey, getSecret, displayValue }) => (
+const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handleKeyChange, handleGetSecretKey, getSecret, displayValue, profileStatus }) => (
   <Fragment>
     <Header
         handleLogout={handleLogout}
@@ -19,6 +19,9 @@ const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handl
           showName
           orientation='left'
         />
+        <div className='profile-status'>
+          "{profileStatus}"
+        </div>
       </div>
       <div className='main-page-section'>
         <InputForm
