@@ -45,7 +45,7 @@ class App extends Component {
     // promise resolution.. waiting from 3Box onSyncDone confirmation
     await new Promise((resolve, reject) => box.onSyncDone(resolve));
     
-    //change to [0] when done testing
+    //open s3cretkeep3r space
     const dappSpace = await box.openSpace('s3cretkeep3r');
 
     // set all to state and continue
@@ -87,7 +87,6 @@ class App extends Component {
       this.setState({inputValue: value});
     } 
 
-
   // **Getting info from Space (Storage)**
   getSecret = async () => {
     const { inputKey, dappSpace } = this.state;
@@ -95,8 +94,8 @@ class App extends Component {
     //returns string || object.. undefined if no such key
     const displayValue = await dappSpace.private.get(inputKey)
 
-    await this.setState({ displayValue });
-  }  
+    await this.setState({ displayValue, inputKey: '' });
+  }
 
   render() {
     const { isAppReady, ethAddress, inputKey, inputValue, displayValue } = this.state;

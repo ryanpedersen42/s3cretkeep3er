@@ -8,7 +8,8 @@ class GetSecret extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hidden: true
+      hidden: true,
+      showSecret: false
     }
   }
 
@@ -21,6 +22,7 @@ class GetSecret extends Component {
     const { hidden } = this.state;
     this.setState({ hidden: !hidden })
   }
+
 
   render() {
     const { displayValue, getSecret } = this.props;
