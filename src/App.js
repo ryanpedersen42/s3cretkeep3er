@@ -100,7 +100,9 @@ class App extends Component {
     //returns string || object.. undefined if no such key
     const displayValue = await dappSpace.private.get(displayValueKey)
 
-    await this.setState({ displayValue, displayValueKey: '' });
+    if (displayValue) {
+      await this.setState({ displayValue, displayValueKey: '' });
+    }
   }
 
   render() {
