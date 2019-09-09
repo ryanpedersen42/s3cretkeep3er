@@ -19,9 +19,6 @@ const MainPage = ({ ethAddress, handleLogout, onSubmit, handleValueChange, handl
           showName
           orientation='left'
         />
-        <div className='profile-status'>
-          "{profileStatus}"
-        </div>
       </div>
       <div className='main-page-section'>
         <InputForm
