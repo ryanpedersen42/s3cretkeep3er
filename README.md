@@ -2,7 +2,7 @@
 
 This is an application to demo various actions that can be taken with the 3Box API. It's a password storage keeper, but can be used to store any "secret" key-value pairs.
 
-Associated blog post [here](https://medium.com/@ryanpedersen42/s3cret-keep3r-with-3%EF%B8%8Fbox-120da07a957f?source=friends_link&sk=42495d61683499df05a6fc7713e17130).
+Associated blog post [here](https://medium.com/@ryanpedersen42/password-manager-with-3box-b6d6decf9fd1?source=friends_link&sk=0f19beb25bd313f6c397910a232e996e).
 
 ---
 
