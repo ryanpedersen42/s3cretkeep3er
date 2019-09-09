@@ -29,4 +29,7 @@ To see the documentation on the APIs used, use the following:
 ## Usage
 
 Using s3cret keep3r
-![Using s3cret keep3r](/src/assets/s3cret_keep3r.gif)
+![Profile Hover](/src/assets/ProfileHover.gif)
+![Add New Secret](/src/assets/AddNewSecret.gif)
+![Get Secret](/src/assets/GetSecret.gif)
+![Sign Out](/src/assets/SignOut.gif)
