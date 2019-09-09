@@ -53,17 +53,7 @@ class App extends Component {
     // set all to state and continue
     await this.setState({ box, ethAddress, dappSpace });
 
-    await this.getUserProfile();
-
     history.push('/main');
-  }
-
-  getUserProfile = async () => {
-    const { ethAddress } = this.state;
-    const userProfile = await Box.getProfile(ethAddress);
-
-    await this.setState({ userProfile })
-    await console.log(this.state.userProfile)
   }
 
   handleLogout = async () => {
