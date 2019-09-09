@@ -1,4 +1,4 @@
-# s3cret keep3r
+# s3cretkeep3r
 
 This is an application to demo various actions that can be taken with the 3Box API. It's a password storage keeper, but can be used to store any "secret" key-value pairs.
 
