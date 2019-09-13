@@ -20,7 +20,6 @@ class App extends Component {
       inputValue:'',
       displayValueKey: '',
       displayValue: '',
-      userProfile: {},
     }
   }
 
@@ -107,7 +106,7 @@ class App extends Component {
   }
 
   render() {
-    const { isAppReady, ethAddress, inputKey, inputValue, displayValue, userProfile } = this.state;
+    const { isAppReady, ethAddress, inputKey, inputValue, displayValue } = this.state;
     return (
       <div className='App'>
         {isAppReady && (<Fragment>
@@ -131,7 +130,6 @@ class App extends Component {
                   inputKey={inputKey}
                   inputValue={inputValue}
                   displayValue={displayValue} 
-                  profileStatus={userProfile.status}
 
                   //functions
                   handleLogout={this.handleLogout}
